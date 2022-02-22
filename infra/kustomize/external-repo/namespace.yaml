@@ -1,0 +1,21 @@
+apiVersion: kubernetes.crossplane.io/v1alpha1
+kind: Object
+metadata:
+  name: external-repo-via-fluxcd
+spec:
+  forProvider:
+    manifest:
+      apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: external-repo
+        annotations:
+          0-pulled-by: fluxcd
+          0_how: you asked FluxCD and it listend to it
+          1_extra1: even though this repository doesn't know anything about deployment,
+          1_extra2: whoever has access to repository can pull this repo and deploy
+          1_extra3: to there Kubernets cluster as long as they set up fluxcd
+          1_extra4: not only that, any deviation from the source of truth (This repo)
+          1_extra5: will be caught and corrected (contious reconciliation)
+  providerConfigRef:
+    name: kubernetes-provider # this is matching to https://github.com/ryuheechul/taste-crossplane/blob/667907fb28b8ad7091075c972da3498aec752dc4/kustomize/provider-kubernetes/with-config/providerconfig.yaml#L4
