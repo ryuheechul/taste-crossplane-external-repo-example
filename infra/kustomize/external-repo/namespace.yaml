@@ -17,5 +17,11 @@ spec:
           1_extra3: to there Kubernets cluster as long as they set up fluxcd
           1_extra4: not only that, any deviation from the source of truth (This repo)
           1_extra5: will be caught and corrected (contious reconciliation)
+          1_extra6: '`deletionPolicy: Orphan` will prevent deletion of actual resource'
+          1_extra7: when this Object is (accidentally) deleted
+          1_extra8: but that also comes with a cost that the actual resource becomes unmanaged
+  # https://crossplane.io/docs/v1.6/concepts/managed-resources.html#syntax
+  deletionPolicy: Orphan # default is Delete when it's not provid
+  # opposite of this is at https://github.com/ryuheechul/taste-crossplane/blob/3ea2b53201af3e06363366374e43dfc22660fbe1/kustomize/mock-cloud/namespace.yaml#L5-L21
   providerConfigRef:
     name: kubernetes-provider # this is matching to https://github.com/ryuheechul/taste-crossplane/blob/667907fb28b8ad7091075c972da3498aec752dc4/kustomize/provider-kubernetes/with-config/providerconfig.yaml#L4
