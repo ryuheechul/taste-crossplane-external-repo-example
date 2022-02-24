@@ -4,6 +4,6 @@ Since we expect this repository to be pulled via FluxCD (especially via [Kustomi
 
 It's also probably good idea to link the "parent" repository that defines the relationship in here.
 
-In this repo's case it's at [ryuheechul/taste-crossplane/blob/main/clusters/local/external-repo-source.yaml](https://github.com/ryuheechul/taste-crossplane/blob/main/clusters/local/external-repo-source.yaml).
+In this repo's case it's at [ryuheechul/taste-crossplane/blob/main/clusters/local/external/source.yaml](https://github.com/ryuheechul/taste-crossplane/blob/main/clusters/local/external/source.yaml).
 
 Also see [external-repo](./external-repo).
